@@ -125,20 +125,26 @@ const PricingSection: React.FC = () => {
       case "payWhatYouWant":
         return (
           <div>
-            <label className="block mt-4">
-              <span className="text-gray-700">Minimum Price</span>
-              <Input
-                type="number"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </label>
-            <label className="block mt-4">
-              <span className="text-gray-700">Maximum Price</span>
-              <Input
-                type="number"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </label>
+            <div className="py-4 space-y-2">
+              <span className="text-gray-700">Price</span>
+              <div className="flex items-center justify-between gap-4">
+                <label className="block flex items-center gap-2 py-2">
+                  <span className="text-gray-700">Min</span>
+                  <Input
+                    type="number"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  />
+                </label>
+                <label className="block flex items-center gap-2">
+                  <span className="text-gray-700">Max.</span>
+                  <Input
+                    type="number"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  />
+                </label>
+              </div>
+            </div>
+
             <label className="block mt-4">
               <span className="text-gray-700">Tax Category</span>
               <SelectCategory
@@ -158,11 +164,13 @@ const PricingSection: React.FC = () => {
 
   return (
     <DetailContainer title="Pricing">
-      <RadioGroup
-        defaultValue="singlePayment"
-        onValueChange={setSelectedOption}
-        radioOptions={radioOptions}
-      />
+      <div className="py-4">
+        <RadioGroup
+          defaultValue="singlePayment"
+          onValueChange={setSelectedOption}
+          radioOptions={radioOptions}
+        />
+      </div>
       {renderInputs()}
     </DetailContainer>
   );

@@ -23,7 +23,7 @@ const RadioGroup = ({ defaultValue, onValueChange, radioOptions }: RadioGroupPro
       className="grid grid-cols-2 gap-4"
     >
       {radioOptions.map((option: OptionProps) => (
-        <div className="flex items-center space-x-2" key={option.value}>
+        <div className={`flex items-center space-x-1 border border-gray-300 p-2 py-4 rounded-xl `}  key={option.value} >
           <RadioGroupItem value={option.value} id={option.value} />
           <Label htmlFor={option.value}>{option.label}</Label>
         </div>
