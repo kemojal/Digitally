@@ -1,11 +1,11 @@
-'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
 
 const links = [
   {
-    href: '/analytics',
-    label: 'Dashboard',
+    href: "/analytics",
+    label: "Dashboard",
     icon: (
       <svg
         className="h-6 w-6 mr-2"
@@ -23,8 +23,8 @@ const links = [
     ),
   },
   {
-    href: '/products',
-    label: 'Products',
+    href: "/products",
+    label: "Products",
     icon: (
       <svg
         className="h-6 w-6 mr-2"
@@ -42,8 +42,8 @@ const links = [
     ),
   },
   {
-    href: '/orders',
-    label: 'Orders',
+    href: "/orders",
+    label: "Orders",
     icon: (
       <svg
         className="h-6 w-6 mr-2"
@@ -61,8 +61,8 @@ const links = [
     ),
   },
   {
-    href: '/emails',
-    label: 'Emails',
+    href: "/emails",
+    label: "Emails",
     icon: (
       <svg
         className="h-6 w-6 mr-2"
@@ -80,8 +80,8 @@ const links = [
     ),
   },
   {
-    href: '/affiliates',
-    label: 'Affiliates',
+    href: "/affiliates",
+    label: "Affiliates",
     icon: (
       <svg
         className="h-6 w-6 mr-2"
