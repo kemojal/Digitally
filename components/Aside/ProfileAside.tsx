@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import ProfileModal from "./ProfileModal";
 
 const links = [
   {
-    href: "/analytics",
-    label: "Dashboard",
+    href: "/settings/profile",
+    label: "Profile",
     icon: (
       <svg
         className="h-6 w-6 mr-2"
@@ -23,8 +24,8 @@ const links = [
     ),
   },
   {
-    href: "/products",
-    label: "Products",
+    href: "/settings/referrals",
+    label: "Referrals",
     icon: (
       <svg
         className="h-6 w-6 mr-2"
@@ -100,7 +101,7 @@ const links = [
   },
 ];
 
-const Aside: React.FC = () => {
+const ProfileAside: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleProfileClick = () => {
@@ -139,28 +140,18 @@ const Aside: React.FC = () => {
           className="h-10 w-10 rounded-full cursor-pointer"
           onClick={handleProfileClick}
         /> */}
+          <span className="w-full h-full flex items-center justify-center text-white">
+            K
+          </span>
         </div>
       </div>
-      {isModalOpen && (
-        <div className="absolute bottom-16 left-4 bg-gray-700 text-white rounded-md shadow-lg py-2 w-56">
-          <Link
-            href="/settings/profile"
-            className="block px-4 py-2 hover:bg-gray-600"
-          >
-            Settings
-          </Link>
-          <button
-            className="block w-full text-left px-4 py-2 hover:bg-gray-600"
-            onClick={() => {
-              /* Handle Logout */
-            }}
-          >
-            Logout
-          </button>
-        </div>
-      )}
+
+      <ProfileModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </aside>
   );
 };
 
-export default Aside;
+export default ProfileAside;
