@@ -7,61 +7,61 @@ import { Button } from "@/components/ui/button";
 import NewProductModal from "./_components/NewProductModal";
 import NewProductModal2 from "./_components/NewProductModal2";
 
-// const productsData = [
-//   {
-//     id: 1,
-//     title: 'The Great Novel',
-//     description: 'A captivating story about love and adventure.',
-//     price: 9.99,
-//     tags: ['Book', 'Adventure', 'Love'],
-//     totalRevenue: 499.5,
-//     totalSales: 50,
-//     image: 'novel.jpg',
-//   },
-//   {
-//     id: 2,
-//     title: 'Web Development Masterclass',
-//     description: 'Learn to build modern web applications from scratch.',
-//     price: 49.99,
-//     tags: ['Course', 'Development', 'Web'],
-//     totalRevenue: 2499.5,
-//     totalSales: 50,
-//     image: 'webdev.jpg',
-//   },
-//   {
-//     id: 3,
-//     title: 'Productivity App',
-//     description: 'A powerful app to boost your productivity.',
-//     price: 24.99,
-//     tags: ['App', 'Productivity', 'Tool'],
-//     totalRevenue: 1249.5,
-//     totalSales: 50,
-//     image: 'prodapp.png',
-//   },
-//   {
-//     id: 4,
-//     title: 'Relaxing Music Album',
-//     description: 'A collection of soothing instrumental tracks.',
-//     price: 6.99,
-//     tags: ['Music', 'Relaxing', 'Instrumental'],
-//     totalRevenue: 349.5,
-//     totalSales: 50,
-//     image: 'music.jpg',
-//   },
-//   {
-//     id: 5,
-//     title: 'Cooking Video Course',
-//     description: 'Learn to cook delicious meals like a pro.',
-//     price: 29.99,
-//     tags: ['Course', 'Cooking', 'Food'],
-//     totalRevenue: 1499.5,
-//     totalSales: 50,
-//     image: 'cooking.jpg',
-//   },
-// ];
+const productsData = [
+  {
+    id: 1,
+    title: 'The Great Novel',
+    description: 'A captivating story about love and adventure.',
+    price: 9.99,
+    tags: ['Book', 'Adventure', 'Love'],
+    totalRevenue: 499.5,
+    totalSales: 50,
+    image: 'novel.jpg',
+  },
+  {
+    id: 2,
+    title: 'Web Development Masterclass',
+    description: 'Learn to build modern web applications from scratch.',
+    price: 49.99,
+    tags: ['Course', 'Development', 'Web'],
+    totalRevenue: 2499.5,
+    totalSales: 50,
+    image: 'webdev.jpg',
+  },
+  {
+    id: 3,
+    title: 'Productivity App',
+    description: 'A powerful app to boost your productivity.',
+    price: 24.99,
+    tags: ['App', 'Productivity', 'Tool'],
+    totalRevenue: 1249.5,
+    totalSales: 50,
+    image: 'prodapp.png',
+  },
+  {
+    id: 4,
+    title: 'Relaxing Music Album',
+    description: 'A collection of soothing instrumental tracks.',
+    price: 6.99,
+    tags: ['Music', 'Relaxing', 'Instrumental'],
+    totalRevenue: 349.5,
+    totalSales: 50,
+    image: 'music.jpg',
+  },
+  {
+    id: 5,
+    title: 'Cooking Video Course',
+    description: 'Learn to cook delicious meals like a pro.',
+    price: 29.99,
+    tags: ['Course', 'Cooking', 'Food'],
+    totalRevenue: 1499.5,
+    totalSales: 50,
+    image: 'cooking.jpg',
+  },
+];
 
 const ProductsPage: React.FC = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(productsData);
   const [searchTerm, setSearchTerm] = useState("");
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [isNewProductModalOpen, setIsNewProductModalOpen] = useState(false);
@@ -162,21 +162,7 @@ const ProductsPage: React.FC = () => {
             + New Product
           </Button>
         </div>
-        // <div className="text-center">
-        //   <h2 className="text-2xl font-bold mb-4">Create your first product</h2>
-        //   <p className="text-gray-600 mb-8">
-        //     Adding products to your store is easy peasy. Create products in
-        //     minutes and start making sales.
-        //   </p>
-        //   <Button
-        //     variant="default"
-        //     className="bg-indigo-600 hover:bg-indigo-700"
-        //     onClick={() => setIsNewProductModalOpen(true)}
-        //   >
-        //     <PlusCircle className="mr-2 h-5 w-5" />
-        //     New Product
-        //   </Button>
-        // </div>
+        
       )}
       <FilterModal
         isOpen={isFilterModalOpen}

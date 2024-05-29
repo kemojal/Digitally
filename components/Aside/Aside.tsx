@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import ProfileModal from "./ProfileModal";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -103,6 +104,7 @@ const links = [
 
 const Aside: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // const pathname = usePathname();
 
   const handleProfileClick = () => {
     setIsModalOpen(!isModalOpen);
@@ -119,7 +121,10 @@ const Aside: React.FC = () => {
         <nav className="py-6">
           <ul>
             {links.map(({ href, label, icon }) => (
-              <li key={href} className="px-4 py-2 hover:bg-gray-700">
+              <li
+                key={href}
+                className="px-4 py-2 hover:bg-gray-100 active:bg-blue-200"
+              >
                 <Link href={href} className="flex items-center">
                   {icon}
                   {label}
@@ -140,16 +145,16 @@ const Aside: React.FC = () => {
           className="h-10 w-10 rounded-full cursor-pointer"
           onClick={handleProfileClick}
         /> */}
-        <span className="w-full h-full flex items-center justify-center text-white">K</span>
+          <span className="w-full h-full flex items-center justify-center text-white">
+            K
+          </span>
         </div>
       </div>
 
-      
-        <ProfileModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
-      
+      <ProfileModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </aside>
   );
 };

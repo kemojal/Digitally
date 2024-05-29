@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface EmailList {
   id: number;
@@ -13,7 +13,6 @@ interface EmailListListProps {
 const EmailListList: React.FC<EmailListListProps> = ({ emailLists }) => {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Email Lists</h2>
       <ul>
         {emailLists.map((emailList) => (
           <li key={emailList.id}>{emailList.name}</li>

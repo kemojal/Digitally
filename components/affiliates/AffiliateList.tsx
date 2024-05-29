@@ -21,7 +21,7 @@ const AffiliateList: React.FC<AffiliateListProps> = ({
 }) => {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Affiliates</h2>
+      {/* <h2 className="text-2xl font-bold mb-4">Affiliates</h2> */}
       {/* <ul>
         {affiliates.map((affiliate) => (
           <li key={affiliate.id}>

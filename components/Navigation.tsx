@@ -2,16 +2,20 @@
 import React from "react";
 import { Search, Bell, Plus } from "lucide-react";
 import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navigation: React.FC = () => {
   const router = useRouter();
+
+  const pathname = usePathname().replace(/\//g, "");
+  let pathName = pathname.charAt(0).toUpperCase() + pathname.slice(1);
+
   return (
     <nav className="bg-white xl:ml-64 lg:ml-48 flex  border-b-[1px] border-gray-50">
       <div className="px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-between h-16 w-full">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold mb-4">Products</h1>
+            <h1 className="text-xl font-bold mb-4">{pathName}</h1>
           </div>
 
           <div>

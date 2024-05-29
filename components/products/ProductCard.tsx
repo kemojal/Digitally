@@ -1,6 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import { DollarSign, ShoppingCart } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import { DollarSign, ShoppingBasket, ShoppingCart } from "lucide-react";
+import Image from "next/image";
 
 export interface ProductProps {
   id: number;
@@ -19,15 +20,23 @@ export interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm overflow-hidden p-4 flex flex-col h-full">
+    <div className="bg-white rounded-lg shadow-sm overflow-hidden  flex flex-col h-full text-sm">
       <div className="relative w-full h-[150px] bg-gray-100 rounded overflow-hidden flex-shrink-0">
-        {/* Add product image or placeholder */}
+        <Image
+          className="w-full "
+          src={"/bg_1.png"}
+          width={200}
+          height={200}
+          alt={product.title}
+        />
       </div>
-      <div className="flex flex-col flex-grow mt-4">
-        <h3 className="font-bold text-lg mb-2 line-clamp-1">{product.title}</h3>
-        <p className="text-gray-700 mb-4 flex-grow">{product.description}</p>
-        <p className="font-bold text-lg mb-4">${product.price}</p>
-        <div className="flex space-x-2 flex-wrap mb-4">
+      <div className="flex flex-col flex-grow mt-4 font-light">
+        <h3 className="font-medium text-lg mb-2 line-clamp-1">
+          {product.title}
+        </h3>
+        <p className="text-gray-400 mb-1 flex-grow">{product.description}</p>
+        <p className="font-medium  mb-2 ">${product.price}</p>
+        <div className="flex space-x-1 flex-wrap mb-4 gap-1">
           {product.tags.map((tag) => (
             <span
               key={tag}
@@ -37,13 +46,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </span>
           ))}
         </div>
-        <div className="flex items-center justify-between mt-4">
-          <div className="flex items-center space-x-2">
-            <DollarSign className="h-5 w-5 text-gray-500" />
-            <span className="text-gray-700">${product.totalRevenue.toFixed(2)}</span>
+        <div className="flex items-center justify-between ">
+          <div className="flex items-center space-x-1">
+            <DollarSign className="h-3 w-3 text-gray-500" />
+            <span className="text-gray-700">
+              ${product.totalRevenue.toFixed(2)}
+            </span>
           </div>
-          <div className="flex items-center space-x-2">
-            <ShoppingCart className="h-5 w-5 text-gray-500" />
+          <div className="flex items-center space-x-1 text-xs">
+            <ShoppingBasket className="h-3 w-3 text-gray-500" />
             <span className="text-gray-700">{product.totalSales} sales</span>
           </div>
         </div>
